@@ -1,0 +1,169 @@
+<div class="span12" style="padding-bottom: 20px">
+	<a href="#/components/calendar" class="btn btn-warning pull-left">Return to calendar</a>
+</div>
+<div class="span12 form-bg">
+ <form class="form-horizontal" ng-submit="addEvent()" ng-init="initForm()" name="create">
+ <h3><i class="icon-pencil"></i> Add event</h3>		
+    <fieldset>
+      	<div class="control-group">        			
+			<div class="controls">
+				<div class="input-prepend">
+					<input placeholder="Summary..." type="text" class="input-xxlarge" ng-model="calendar.summary" name="summary" />
+				</div>
+				<span ng-show="form.summary.$error" class="help-inline">{{errors.summary}}</span>
+			</div>
+		</div>
+      	<div class="control-group">          		
+			<div class="controls">
+				<div class="input-prepend">
+					<input placeholder="Start date..." type="text" class="input-small" style="margin-right: 3px;" ng-model="calendar.start.date" name="start.date" />						 
+            		<select placeholder="Start time" ng-model="calendar.start.dateTime" class="input-small">
+						<option ng-repeat="time in times">{{time.format("hh:mm")}}</option>
+					</select>
+            		<input placeholder="End date..." type="text" class="input-small" style="margin-right: 3px;" ng-model="calendar.end.date" name="end.date" /> 
+            		<select placeholder="End time" ng-model="calendar.end.dateTime" class="input-small">
+						<option ng-repeat="time in times">{{time.format("hh:mm")}}</option>
+					</select>
+				</div>
+				<span ng-show="form.summary.$error" class="help-inline">{{errors.summary}}</span>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="surrname">Where:</label>
+			<div class="controls">
+				<div class="input-prepend">
+					<input placeholder="Where..." type="text" class="input-xlarge" ng-model="calendaer.location" name="location" />
+				</div>
+				<span ng-show="form.location.$error" class="help-inline">{{errors.location}}</span>
+			</div>
+			</div>
+      	<div class="control-group">
+  			<label class="control-label" for="name">Calendar:</label>
+			<div class="controls">
+				<div class="input-prepend">
+					<select name="id" ng-model="calendar.id">
+						<option>Calendar 1</option>
+						<option>Calendar 2</option>  								
+					</select>			
+				</div>
+				<span ng-show="form.id.$error" class="help-inline">{{errors.id}}</span>
+			</div>
+		</div>	
+		<div class="control-group">
+			<label class="control-label" for="name">Description:</label>
+			<div class="controls">
+				<div class="input-prepend">
+					<textarea placeholder="Description..." type="text" class="input-xlarge" ng-model="calendar.description" name="description">
+            		</textarea>
+				</div>
+				<span ng-show="form.description.$error" class="help-inline">{{errors.description}}</span>
+			</div>
+		</div>									
+		<div class="control-group">
+			<label class="control-label" for="colors">Event color:</label>
+			<div class="controls">
+				<div class="input-prepend">
+					<ng-color-picker model-object="calendar" model-property="color"></ng-color-picker>
+				</div>    						
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="reminders">Reminder:</label>
+			<div class="controls">
+				<div class="input-prepend">
+					 <select name="reminders" class="input-small" ng-model="calendar.reminders.method">
+  						<option>E-Mail</option>
+						<option>Popup</option>  								
+					</select>	                
+             		<input placeholder="10" type="text" class="input-mini" ng-model="calendar.reminders.minutes" name="minutes" />
+             		<select name="timespan" class="input-small" ng-model="calendar.reminders.length">                 
+  						<option>minutes</option>
+						<option>hours</option>  	
+              			<option>days</option>    
+					</select>
+				</div>
+				<span ng-show="form.reminder.$error" class="help-inline">{{errors.reminder}}</span>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="availability">Show me as:</label>
+			<div class="controls">
+				<div class="input-prepend">
+          			<label class="radio">
+            			<input type="radio" name="optionsRadios" id="optionsRadios1" ng-model="calendar.locked" value="available" checked>
+            			Available
+          			</label>
+          			<label class="radio">
+            			<input type="radio" name="optionsRadios" id="optionsRadios2" ng-model="calendar.locked" value="busy">
+            			Busy
+          			</label>		
+				</div>
+				<span ng-show="form.locked.$error" class="help-inline">{{errors.locked}}</span>
+			</div>
+		</div>    
+      	<div class="control-group">
+  			<label class="control-label" for="confirmPassword">Privacy:</label>
+			<div class="controls">
+				<div class="input-prepend">
+              		<label class="radio">
+                		<input type="radio" name="optionsRadios2" id="optionsRadios3" ng-model="calendar.visibility" value="default" checked>
+                		Default
+              		</label>
+              		<label class="radio">
+                		<input type="radio" name="optionsRadios2" id="optionsRadios4" ng-model="calendar.visibility" value="public">
+                		Public
+              		</label>	
+               		<label class="radio">
+                		<input type="radio" name="optionsRadios2" id="optionsRadios5" ng-model="calendar.visibility" value="private">
+                		Private
+              		</label>  	
+				</div>
+				<span ng-show="form.visibility.$error" class="help-inline">{{errors.visibility}}</span>
+			</div>
+		</div>    		
+		<div class="control-group">
+			<label class="control-label" for="guest">Add guests:</label>
+			<div class="controls">
+				<div class="input-prepend">
+					<span class="add-on"><i class="icon-user"></i></span>
+					<input placeholder="Enter invitee..." type="text" class="input-large" ng-model="calendar.attendee" name="attendee" />
+            		<button class="btn btn-primary" ng-click="addAttendee()">Add</button>  		  
+				</div>
+				<span ng-show="form.attendee.$error" class="help-inline">{{errors.attendee}}</span>
+			</div>
+		</div>    
+      	<div class="control-group">
+			<label class="control-label" for="invitees">&nbsp;</label>
+			<div class="controls">
+				<ul class="unstyled">
+        			<li ng-repeat="attendee in calendar.attendees">                    
+          				<span>{{attendee.email}}</span>
+          				<a href="" ng-click="removeAttendee(attendee)"><i class="icon-remove"></i></a>
+        			</li>
+      			</ul>
+			</div>
+		</div>   
+      	<div class="control-group">
+  			<label class="control-label" for="surrname">Guests may:</label>
+			<div class="controls">
+				<label class="checkbox">
+            		<input type="checkbox" ng-model="calendar.guestsCanModify"> modify event
+          		</label>
+          		<label class="checkbox">
+            		<input type="checkbox" ng-model="calendar.guestsCanInviteOthers"> invite others
+          		</label>
+          		<label class="checkbox">
+            		<input type="checkbox" ng-model="calendar.guestsCanSeeOtherGuests"> see guest list
+          		</label>
+			</div>
+		</div> 
+	</fieldset>		
+	<div class="form-actions">
+  		<button class="btn" ng-click="reset()" ng-disabled="isUnchanged(calendar)">Cancel</button>
+		<button class="btn btn-primary" type="submit">Save</button>			   	            		
+	</div>
+</form>		
+</div>
+<div class="span12">
+	<pre>calendar = {{calendar | json}}</pre>		
+</div>

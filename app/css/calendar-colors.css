@@ -1,0 +1,58 @@
+/* Colordefinitions .color-{{colorId}} */
+.color-blue {
+  background-color: #5484ED;
+  border-color: #5484ED;
+}
+
+.color-lilac {
+  background-color: #A4BDFC;
+  border-color: #A4BDFC;
+}
+
+.color-turqoise {
+  background-color: #46D6DB;
+  border-color: #46D6DB;
+}
+
+.color-green {
+  background-color: #7AE7BF;
+  border-color: #7AE7BF;
+}
+
+.color-bold-green {
+  background-color: #51B749;
+  border-color: #51B749;
+}
+
+.color-yellow {
+  background-color: #FBD75B;
+  border-color: #FBD75B;
+}
+
+.color-orange {
+  background-color: #FFB878;
+  border-color: #FFB878;
+}
+
+.color-red {
+  background-color: #FF887C;
+  border-color: #FF887C; 
+}
+
+.color-bold-red {
+  background-color: #DC2127;
+  border-color: #DC2127;
+}
+
+.color-purple {
+  background-color: #DBADFF;
+  border-color: #DBADFF;
+}
+
+.color-grey {
+  background-color: #E1E1E1;
+  border-color: #E1E1E1;
+}
+
+
+
