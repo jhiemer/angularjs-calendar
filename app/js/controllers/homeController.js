@@ -1,8 +1,11 @@
-define(['app'], function (app) {
+define(function () {
 	'use strict';
+	//TODO - wofür gibts diesen Controller?
+	function HomeControllerFactory($scope, $http) {
+		console.log($scope, $http);
+	}
 
-	return app.controller('HomeController', ['$scope', '$http',
-		function HomeController($scope, $http) {
-			
-		}]);
+	HomeControllerFactory.$inject = ['$scope', '$http'];
+
+	return HomeControllerFactory;
 });

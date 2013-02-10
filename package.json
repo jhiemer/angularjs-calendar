@@ -1,0 +1,10 @@
+{
+	"name": "angularjs-calendar",
+	"homepage": "",
+	"version": "0.1.0",
+	"devDependencies": {
+	},
+	"engines": {
+		"node": "0.8.x"
+	}
+}

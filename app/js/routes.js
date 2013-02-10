@@ -1,21 +1,24 @@
-define(['app'], function (app) {
+define(function () {
 	'use strict';
 
-	return app.config(['$routeProvider', '$locationProvider', 
-	function($routeProvider, $locationProvider) {		
+	function RouteFactory($routeProvider) {
 		$routeProvider.
-		when('/components/calendar', {
-			templateUrl: 'partials/components/calendar.html',
-			controller: 'CalendarController'
-		}).
-		when('/components/date-picker', {
-			templateUrl: 'partials/components/date-picker.html',
-			controller: 'CalendarController'
-		}).
-		when('/components/event', {
-			templateUrl: 'partials/components/event.html',
-			controller: 'CalendarController'
-		}).
-		otherwise({redirectTo:'/'}); 	
-	}]);
+			when('/components/calendar', {
+				templateUrl: 'partials/components/calendar.html',
+				controller: 'CalendarController'
+			}).
+			when('/components/date-picker', {
+				templateUrl: 'partials/components/date-picker.html',
+				controller: 'CalendarController'
+			}).
+			when('/components/event', {
+				templateUrl: 'partials/components/event.html',
+				controller: 'CalendarController'
+			}).
+			otherwise({redirectTo:'/'});
+	}
+
+	RouteFactory.$inject = '$routeProvider';
+
+	return RouteFactory;
 });
