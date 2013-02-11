@@ -1,59 +1,58 @@
-<div class="span12" style="padding-bottom: 20px">
-	<a href="#/components/event" class="btn btn-inverse pull-right" style="margin-right: 70px">Add event</a>
+<div class="container-fluid" style="padding-bottom: 30px">    
+    <a href="#/components/event" class="btn btn-inverse pull-right"><i class="icon-pencil icon-white"/> Add event</a>
 </div>
-<div class="span12">
-  <tabs>
-    <pane pane-title="1 Days" pane-prev="date.add('days', -1)" pane-next="date.add('days', 1)">
-      <calendar
-        date="date"
-        view="day"
-        eventsource="events" 
-        time-format="H a"
-        start-of-week="false"
-        days="1"
-        offset="0"
-        calendar-id="day"></calendar>
-    </pane>
-    <pane pane-title="3 Days" pane-prev="date.add('days', -1)" pane-next="date.add('days', 1)">
-      <calendar
-        date="date"
-        view="day"
-        eventsource="events" 
-        time-format="H a"
-        start-of-week="false"
-        days="3"
-        offset="-1"
-        calendar-id="day"></calendar>
-    </pane>
-    <pane pane-title="5 Days" pane-prev="date.add('days', -1)" pane-next="date.add('days', 1)">
-      <calendar
-        date="date"
-        view="day"
-        eventsource="events" 
-        time-format="H a"
-        start-of-week="false"
-        days="5"
-        offset="-2"
-        calendar-id="day"></calendar>
-    </pane>
-    <pane pane-title="7 Days" pane-prev="date.add('weeks', -1)" pane-next="date.add('weeks', 1)">
-      <calendar
-        date="date"
-        view="day"
-        eventsource="events" 
-        time-format="H a"
-        start-of-week="false"
-        days="7"
-        offset="-3"
-        calendar-id="day"></calendar>
-    </pane>
-    <pane pane-title="Month" pane-prev="date.add('days', -1)" pane-next="date.add('days', 1)">
-      <calendar
-        date="date"
-        view="month"
-        days="7"
-        offset="-1"></calendar>
-      </calendar>
-    </pane>    
-  </tabs>
+<div class="container-fluid">
+    <tabs type="tabs-left">
+            <pane heading="1 Day">
+                 <calendar
+                    date="date"
+                    view="day"
+                    eventsource="events" 
+                    time-format="H a"
+                    start-of-week="false"
+                    days="1"
+                    offset="0"
+                    calendar-id="day"></calendar>
+            </pane>
+            <pane heading="3 Days">
+                <calendar
+                    date="date"
+                    view="day"
+                    eventsource="events" 
+                    time-format="H a"
+                    start-of-week="false"
+                    days="3"
+                    offset="-1"
+                    calendar-id="day"></calendar>
+            </pane>
+            <pane heading="5 Days">
+                 <calendar
+                    date="date"
+                    view="day"
+                    eventsource="events" 
+                    time-format="H a"
+                    start-of-week="false"
+                    days="5"
+                    offset="-2"
+                    calendar-id="day"></calendar>
+            </pane>
+            <pane heading="7 Days">
+                <calendar
+                    date="date"
+                    view="day"
+                    eventsource="events" 
+                    time-format="H a"
+                    start-of-week="false"
+                    days="7"
+                    offset="-3"
+                    calendar-id="day"></calendar>
+            </pane>
+             <pane heading="1 Month">
+                <calendar
+                    date="date"
+                    view="month"
+                    days="7"
+                    offset="-1"></calendar>
+            </pane> 
+    </tabs>
 </div>

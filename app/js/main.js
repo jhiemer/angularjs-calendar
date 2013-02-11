@@ -27,7 +27,7 @@ require([
 	'routes',
 	'directives/calendarDirective',
 	'directives/calendarDatePickerDirective',
-	'directives/tabsDirective',
+	'directives/angular-ui/tabs',
 	'controllers/homeController',			
 	'controllers/components/calendarController'
 ], function(angular, app) {
