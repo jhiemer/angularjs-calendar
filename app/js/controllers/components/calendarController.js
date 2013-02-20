@@ -1,4 +1,6 @@
-
+/**
+ * The current calendar controller
+ **/
 
 define(['app'], function (app) {
 	'use strict';

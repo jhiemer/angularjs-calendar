@@ -1,0 +1,12 @@
+<table class="table table-bordered table-striped bs-calendar">
+    <thead>
+        <th style="width: 15px">#</th>
+        <th ng-repeat="day in days">{{day.format("dddd")}}</th>
+    </thead>
+    <tbody>
+        <tr ng-repeat="week in weeks">
+            <td class="bs-calendar-month-row">{{week[1]}}</td>
+            <td ng-repeat="day in daysOfWeek[week[0]]" class="bs-calendar-month-row">{{day.format("DD")}}</td>
+        </tr>
+    </tbody>
+</table>

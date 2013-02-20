@@ -1,0 +1,31 @@
+<table class="table bs-calendar day-view">
+    <tbody whole-day-view days="days"></tbody>
+    <tbody>
+        <tr>
+            <td colspan="{{days.length + 1}}" class="bs-calendar-colwrapper">
+                <div style="position: relative;">
+                    <div class="bs-calendar-spanningwrapper">
+                        <div class="bs-calendar-tg-hourmarkers">
+                            <div class="bs-calendar-tg-markercell" ng-repeat="hour in hours">
+                                <div class="bs-calendar-tg-dualmarker"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td class="bs-calendar-tg-hours">
+                <div class="bs-calendar-tg-hour-inner" ng-repeat="hour in hours">
+                    <div class="bs-calendar-tg-hour-clock">
+                        {{hour.format(timeFormat)}}
+                    </div>
+                </div>
+            </td>
+            <td ng-repeat="day in days" class="bs-calendar-tg-day-container" ng-class="{today: ((day.sod().diff(now.sod())!=0) + (numberOfDays > 1)  == 1)}">
+                <hour-view-event-container events="day.events"></hour-view-event-container>
+            </td>
+        </tr>
+    </tbody>
+</table>

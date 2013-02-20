@@ -1,0 +1,14 @@
+<tr class="bs-calendar-header">
+    <td class="bs-calendar-weeknumber">
+        <div>{{days[0].format($parent.labelFormat)}}</div>
+    </td>
+    <td ng-repeat="day in days">
+        <div class="bs-calendar-daylabel">{{day.format($parent.$parent.dayLabelFormat)}}</div>
+    </td>
+</tr>
+<tr class="bs-calendar-whole-day-event-list" ng-repeat="wholeDayEvent in eventlist">
+    <td class="bs-calendar-whole-day-space">&nbsp;</td>
+    <td ng-repeat="event in wholeDayEvent" colspan="{{event.colspan}}">
+        <whole-day-event event="event.event"></whole-day-event>
+    </td>
+</tr>

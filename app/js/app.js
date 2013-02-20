@@ -1,7 +1,6 @@
 define([], function () {
-	return angular.module('myApp', [		
-		'directive.calendar',
-		'directive.datePicker',
+	return angular.module('myApp', [
+		'ui.bootstrap.calendar',		
 		'ui.bootstrap.tabs'
 	]);
 });
